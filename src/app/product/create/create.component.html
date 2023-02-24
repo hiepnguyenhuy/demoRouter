@@ -1,0 +1,12 @@
+<div class="modal-body">
+  <form [formGroup]="formCreate" (submit)="creatProduct()">
+    <input placeholder="nhập id" formControlName="id"><br>
+    <p *ngIf="formCreate.get('id')?.errors?.required && formCreate.get('id')?.touched" style="color: red">Không null</p>
+    <p *ngIf="formCreate.get('id')?.errors?.max && formCreate.get('id')?.touched" style="color: red">max là 50</p>
+    <input placeholder="nhập name" formControlName="name"><br>
+    <input placeholder="nhập img" formControlName="img"><br>
+    <input placeholder="nhập price" formControlName="price"><br>
+    <button type="submit" class="btn btn-primary" >Submit </button>
+
+  </form>
+</div>
